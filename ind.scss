@@ -1,0 +1,361 @@
+$tablet: 880px;
+$mobile: 400px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+p {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+}
+h1 {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+}
+@mixin myContainer() {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @content;
+}
+@mixin myMedia($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+.header {
+  padding-top: 36px;
+  padding-bottom: 85px;
+  @include myMedia(560px) {
+    padding-bottom: 45px;
+  }
+  .container {
+    @include myContainer() {
+      gap: 15px;
+    }
+
+    img {
+      width: 198px;
+      height: 45px;
+    }
+    ul {
+      @include myMedia($tablet) {
+        width: 444px;
+      }
+      @include myMedia(715px) {
+        display: none;
+      }
+      display: flex;
+      width: 644px;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      font-size: 20px;
+      line-height: 27px;
+      color: #000000;
+    }
+  }
+}
+.main {
+  .container {
+    @include myContainer() {
+      align-items: flex-start;
+      gap: 15px;
+    }
+    @include myMedia(1000px) {
+      align-items: center;
+      padding-bottom: 30px;
+    }
+    @include myMedia(560px) {
+      flex-direction: column;
+    }
+    .img-block {
+      width: 420px;
+      @include myMedia(560px) {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .main-right {
+      padding-top: 85px;
+      @include myMedia(1000px) {
+        padding-top: 0;
+      }
+      h1 {
+        max-width: 640px;
+        font-size: 56px;
+        line-height: 139%;
+        letter-spacing: 0.02em;
+        color: #e5a985;
+        @include myMedia($tablet) {
+          font-size: 40px;
+          line-height: 100%;
+        }
+      }
+      p {
+        max-width: 576px;
+        font-size: 24px;
+        line-height: 171%;
+        letter-spacing: 0.02em;
+        color: #4a4747;
+        margin: 39px 0 69px;
+        @include myMedia($tablet) {
+          font-size: 22px;
+          line-height: 130%;
+          margin: 20px 0 39px;
+        }
+      }
+
+      .inp-group {
+        max-width: 640px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+
+        input {
+          width: 100%;
+          height: 58px;
+          background: #e5e5e5;
+          border-radius: 8px 0px 0px 8px;
+          border: none;
+          font-family: "Nunito Sans";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 135.5%;
+          padding-left: 20px;
+          color: #c4c4c4;
+
+          @include myMedia($mobile) {
+            height: 40px;
+            font-weight: 500;
+            font-size: 13px;
+          }
+        }
+        button {
+          width: 160px;
+          height: 58px;
+          font-family: "Nunito Sans";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 135.5%;
+          color: #ffffff;
+          background: #91916c;
+          border-radius: 0px 8px 8px 0px;
+          border: none;
+          @include myMedia($tablet) {
+            font-weight: 700;
+            font-size: 14px;
+          }
+          @include myMedia($mobile) {
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+.product {
+  background-color: #e1e1c2;
+  padding: 120px 0 46px;
+  @include myMedia($tablet) {
+    padding: 60px 0 46px;
+  }
+  @include myMedia($mobile) {
+    padding: 30px 0 26px;
+  }
+  .title {
+    @include myMedia($tablet) {
+      font-size: 26px;
+      line-height: 109%;
+    }
+    @include myMedia($mobile) {
+      font-size: 20px;
+      line-height: 80%;
+    }
+    margin: 0 auto;
+    text-align: center;
+    font-size: 32px;
+    line-height: 139%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #91916c;
+  }
+  .line {
+    max-width: 288px;
+    margin: 24px auto 52px;
+    border: 3px solid #91916c;
+    @include myMedia($tablet) {
+      margin: 24px auto 32px;
+    }
+    @include myMedia($mobile) {
+      margin: 18px auto 26px;
+      max-width: 188px;
+    }
+  }
+  .desc {
+    margin: 0 auto 51px;
+    text-align: center;
+    font-size: 48px;
+    line-height: 139%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #65653e;
+    max-width: 727px;
+    @include myMedia($tablet) {
+      font-size: 32px;
+      line-height: 120%;
+      margin: 0 auto 31px;
+    }
+    @include myMedia($mobile) {
+      font-size: 22px;
+      line-height: 100%;
+      margin: 0 auto 21px;
+    }
+  }
+  .container {
+    @include myContainer() {
+      gap: 15px;
+    }
+    .hola {
+      width: 800px;
+      img {
+        width: 100%;
+      }
+    }
+    button {
+      width: 58px;
+      height: 58px;
+      background: #e5a985;
+      border-radius: 29px;
+      border: none;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 58px;
+      @include myMedia($mobile) {
+        width: 28px;
+        height: 28px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 28px;
+      }
+      img {
+        @include myMedia($mobile) {
+          width: 30%;
+          height: 30%;
+        }
+      }
+    }
+  }
+  p {
+    margin-top: 45px;
+    font-size: 20px;
+    line-height: 139%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #333333;
+    @include myMedia($mobile) {
+      margin-top: 30px;
+      font-size: 16px;
+      line-height: 109%;
+    }
+  }
+}
+
+.carousel {
+  padding: 82px 0 64px;
+  .title {
+    @include myMedia($tablet) {
+      font-size: 26px;
+      line-height: 109%;
+    }
+    @include myMedia($mobile) {
+      font-size: 20px;
+      line-height: 80%;
+    }
+    margin: 0 auto;
+    text-align: center;
+    font-size: 32px;
+    line-height: 139%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #91916c;
+  }
+  .line {
+    max-width: 288px;
+    margin: 24px auto 52px;
+    border: 3px solid #91916c;
+    @include myMedia($tablet) {
+      margin: 24px auto 32px;
+    }
+    @include myMedia($mobile) {
+      margin: 18px auto 26px;
+      max-width: 188px;
+    }
+  }
+  .desc {
+    margin: 0 auto 51px;
+    text-align: center;
+    font-size: 48px;
+    line-height: 139%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #e5a985;
+    max-width: 727px;
+    @include myMedia($tablet) {
+      font-size: 32px;
+      line-height: 120%;
+      margin: 0 auto 31px;
+    }
+    @include myMedia($mobile) {
+      font-size: 22px;
+      line-height: 100%;
+      margin: 0 auto 21px;
+    }
+  }
+  .container {
+    transition: 2s all linear;
+
+    @include myContainer() {
+      gap: 15px;
+    }
+    @include myMedia($mobile) {
+      flex-direction: column;
+    }
+    .card {
+      width: 351px;
+      max-height: 485px;
+      border-radius: 20px;
+      background: #fae3d8;
+      border-radius: 20px;
+      @include myMedia($mobile) {
+        width: 100%;
+      }
+      .img-b {
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      p {
+        font-size: 24px;
+        line-height: 138.5%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #000000;
+      }
+    }
+  }
+}
